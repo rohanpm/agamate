@@ -1,3 +1,3 @@
-# Introduction to gamte
+# Introduction to agamate
 
 TODO: write [great documentation](http://jacobian.org/writing/what-to-write/)

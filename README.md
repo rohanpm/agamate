@@ -1,4 +1,4 @@
-# gamte
+# agamate
 
 FIXME: description
 
@@ -10,7 +10,7 @@ Download from http://example.com/FIXME.
 
 FIXME: explanation
 
-    $ java -jar gamte-0.1.0-standalone.jar [args]
+    $ java -jar agamate-0.1.0-standalone.jar [args]
 
 ## Options
 
