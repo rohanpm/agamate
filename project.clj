@@ -11,7 +11,8 @@
                  [ring/ring-devel "1.3.1"]
                  [ring-middleware-format "0.4.0"]
                  [korma "0.4.0"]
-                 [org.postgresql/postgresql "9.2-1002-jdbc4"]]
+                 [org.postgresql/postgresql "9.2-1002-jdbc4"]
+                 [cheshire "5.3.1"]]
   :main ^:skip-aot agamate.core
   :target-path "target/%s"
   :plugins [[cider/cider-nrepl "0.8.0-SNAPSHOT"]]

@@ -16,8 +16,13 @@
   (GET "/repos" [] api/list-repos)
   (POST "/repos" [] api/create-repo))
 
+(defroutes test-api
+  (GET "/tests" [] api/list-tests)
+  (POST "/tests" [] api/create-test))
+
 (defroutes api*
   repo-api
+  test-api
   (route/not-found nil))
 
 (def api (-> api*
