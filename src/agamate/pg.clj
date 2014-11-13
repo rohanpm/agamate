@@ -11,3 +11,8 @@
 
 (defn from-pg-json [^PGobject object]
   (json/decode (.getValue object)))
+
+(defn from-pg-array [^java.sql.Array object]
+  (-> object
+      (.getArray)
+      (concat)))

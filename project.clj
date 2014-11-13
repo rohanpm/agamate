@@ -6,13 +6,16 @@
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [org.immutant/web "2.0.0-alpha2"]
                  [org.immutant/scheduling "2.0.0-alpha2"]
+                 [org.immutant/messaging "2.0.0-alpha2"]
+                 [org.immutant/transactions "2.0.0-alpha2"]
                  [compojure "1.2.1"]
                  [org.clojure/tools.logging "0.3.1"]
                  [ring/ring-devel "1.3.1"]
                  [ring-middleware-format "0.4.0"]
                  [korma "0.4.0"]
                  [org.postgresql/postgresql "9.2-1002-jdbc4"]
-                 [cheshire "5.3.1"]]
+                 [cheshire "5.3.1"]
+                 [org.eclipse.jgit/org.eclipse.jgit "3.6.0.201411121045-m1"]]
   :main ^:skip-aot agamate.core
   :target-path "target/%s"
   :plugins [[cider/cider-nrepl "0.8.0-SNAPSHOT"]]

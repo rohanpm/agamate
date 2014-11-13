@@ -20,13 +20,18 @@
   (GET "/tests" [] api/list-tests)
   (POST "/tests" [] api/create-test))
 
+(defroutes git-api
+  (POST "/git/ensure-fetched" [] api/git-ensure-fetched))
+
 (defroutes api*
   repo-api
   test-api
+  git-api
   (route/not-found nil))
 
 (def api (-> api*
           (ring/wrap-logging)
           (ring/wrap-defaults)
           (ring/wrap-db-error)
+          (ring/wrap-transaction)
           (ring.middleware.format/wrap-restful-format :formats [:json-kw :edn :yaml-kw :yaml-in-html :transit-msgpack :transit-json])))

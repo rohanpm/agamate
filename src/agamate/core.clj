@@ -5,7 +5,8 @@
             [agamate
              [routes :as routes]
              [migrate :as migrate]
-             [db :as db]])
+             [db :as db]]
+            agamate.git.worker)
   (:gen-class))
 
 (set! *warn-on-reflection* true)
@@ -24,6 +25,7 @@
         (log/info "Starting in development mode")
         (immutant.util/set-log-level! :DEBUG)))
     (init-db)
+    (agamate.git.worker/start)
     (if dev?
       (web/run-dmc routes/api)
       (web/run routes/api))))

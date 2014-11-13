@@ -1,5 +1,7 @@
 (ns agamate.ring
-  (:require [clojure.tools.logging :as log])
+  (:require [clojure.tools.logging :as log]
+            [korma.db :as db]
+            agamate.transactions)
   (:import java.sql.SQLException))
 
 (set! *warn-on-reflection* true)
@@ -14,6 +16,11 @@
 
 (defn- request-str [request]
   (str (method-str request) " " (:uri request)))
+
+(defn wrap-transaction [handler]
+  (fn [request]
+    (agamate.transactions/transaction
+     (handler request))))
 
 (defn wrap-logging [handler]
   (fn [request]
