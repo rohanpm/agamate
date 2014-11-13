@@ -41,7 +41,7 @@ BEGIN
   GET DIAGNOSTICS cnt = ROW_COUNT;
   IF cnt = 0 THEN
     RAISE 'Foreign key violation; no %.% matching %', foreign_tbl_name, foreign_col_name, col_name
-      USING errcode=foreign_key_violation;
+      USING errcode='foreign_key_violation';
   END IF;
   RETURN NULL;
 END;
